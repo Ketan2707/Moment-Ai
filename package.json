@@ -1,0 +1,24 @@
+{
+  "name": "moment-platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MOMENT - AI-Powered Real-World Social Companion for Physical Events",
+  "workspaces": [
+    "packages/*",
+    "backend",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:web": "npm --prefix apps/web run dev",
+    "dev:mobile": "npm --prefix apps/mobile run start",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:web\"",
+    "build:web": "npm --prefix apps/web run build",
+    "build:backend": "npm --prefix backend run build",
+    "build:apk": "npm --prefix apps/mobile run build:apk",
+    "build": "npm run build:backend && npm run build:web"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

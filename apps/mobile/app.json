@@ -1,0 +1,48 @@
+{
+  "expo": {
+    "name": "MOMENT",
+    "slug": "moment-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#F7F3EA"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.moment.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "MOMENT uses your camera to scan event QR codes and capture Moment memories.",
+        "NSLocationWhenInUseUsageDescription": "MOMENT uses approximate location to detect event zones."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#F7F3EA"
+      },
+      "package": "com.moment.app",
+      "permissions": [
+        "CAMERA",
+        "ACCESS_COARSE_LOCATION",
+        "VIBRATE"
+      ]
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow MOMENT to scan event check-in QR codes."
+        }
+      ]
+    ],
+    "scheme": "moment"
+  }
+}
